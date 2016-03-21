@@ -13,10 +13,10 @@ namespace PdfDownloaderPO.Tests
         public void DownloadTimeTableTest()
         {
             var handler = new BasicDownloadTimeTableHandler();
-            handler.DownloadTimeTable("http://www.planyzajec.po.opole.pl/weaii/g743.html",
-                Environment.CurrentDirectory + @"\Test\g743.html");
-            Assert.IsTrue(File.Exists(Environment.CurrentDirectory + @"\Test\g743.html"));
-            File.Delete(Environment.CurrentDirectory + @"\Test\g743.html");
+            handler.DownloadTimeTable("http://www.planyzajec.po.opole.pl/weaii/g743.pdf",
+                Environment.CurrentDirectory + @"g743.pdf");
+            Assert.IsTrue(File.Exists(Environment.CurrentDirectory + @"g743.pdf"));
+            File.Delete(Environment.CurrentDirectory + @"g743.pdf");
 
         }
     }

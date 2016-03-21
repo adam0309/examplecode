@@ -15,10 +15,13 @@ namespace PdfDownloaderPO.Tests
         private string _testPatch;
 
         [TestMethod]
-        public void PdfDownloaderIntegrationTest1()
+        public void PdfDownloaderIntegrationTest()
         {
             var result = new List<ITimeTablesStore>();
             _testPatch = Environment.CurrentDirectory + "\\Test\\";
+            if (!Directory.Exists(_testPatch))
+                Directory.CreateDirectory(_testPatch);
+            
             foreach (var departmentObject in Constants.Departments.Keys.Select(department => Constants.DepartmentFactory[department].Invoke()))
             {
                 departmentObject.GetTimeTablesGroups(new BasicGetTimeTablesHandler());
